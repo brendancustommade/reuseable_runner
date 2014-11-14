@@ -91,7 +91,7 @@ class ReuseDBTestRunner(CITestSuiteRunner):
 
         Command.handle = _foreign_key_ignoring_handle
 
-        super(ReuseDBTestRunner, self).setup_databases(**kwargs)
+        return super(ReuseDBTestRunner, self).setup_databases(**kwargs)
 
     def teardown_databases(self, old_config, **kwargs):
         if not _reusing_db():
